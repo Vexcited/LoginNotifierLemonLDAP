@@ -1,0 +1,21 @@
+services:
+  lemonldap-ng:
+    container_name: lemonldap-ng
+    image: lemonldapng/lemonldap-ng:latest
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Europe/Paris
+      LOGLEVEL: debug
+      PORT: 80
+      IPV4_ONLY: true
+      PRESERVEFILES: /etc/lemonldap-ng /var/lib/lemonldap-ng/conf /var/lib/lemonldap-ng/sessions /var/lib/lemonldap-ng/psessions /etc/nginx/sites-enabled
+    ports:
+      - 80:80
+    volumes:
+      - ./llng/etc:/etc/lemonldap-ng
+      - ./llng/var-conf:/var/lib/lemonldap-ng/conf
+      - ./llng/var-sessions:/var/lib/lemonldap-ng/sessions
+      - ./llng/var-psessions:/var/lib/lemonldap-ng/psessions
+      - ./src:/usr/share/perl5/Lemonldap/NG/Portal/Plugins/CustomPlugin
+    restart: unless-stopped
