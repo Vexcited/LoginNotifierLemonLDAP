@@ -17,5 +17,5 @@ services:
       - ./llng/var-conf:/var/lib/lemonldap-ng/conf
       - ./llng/var-sessions:/var/lib/lemonldap-ng/sessions
       - ./llng/var-psessions:/var/lib/lemonldap-ng/psessions
-      - ./src:/usr/share/perl5/Lemonldap/NG/Portal/Plugins/CustomPlugin
+      - ./src/LoginNotifier.pm:/usr/share/perl5/Lemonldap/NG/Portal/Plugins/LoginNotifier.pm
     restart: unless-stopped
