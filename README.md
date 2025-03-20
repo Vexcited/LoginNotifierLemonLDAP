@@ -14,6 +14,16 @@ Login Notifier is a plugin for LemonLDAP that sends a notification (through any 
 
 [`LoginNotifier.pm`](/src/LoginNotifier.pm) file should be located at `Lemonldap/NG/Portal/Plugins/LoginNotifier.pm`.
 
+Now, enable the plugin by either declaring it in `/etc/lemonldap-ng/lemonldap-ng.ini`
+
+```ini
+[portal]
+customPlugins = Lemonldap::NG::Portal::Plugins::LoginNotifier
+```
+
+...or by adding it to the modules list in the Manager, in General Parameters > Plugins > Custom Plugins
+and writing `Lemonldap::NG::Portal::Plugins::LoginNotifier` in the text area.
+
 ## Configuration
 
 WIP
